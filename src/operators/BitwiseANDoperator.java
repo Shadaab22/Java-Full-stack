@@ -1,3 +1,4 @@
+package operators;
 public class BitwiseANDoperator {
 
 	public static void main(String[] args) {
