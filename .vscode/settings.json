@@ -1,0 +1,23 @@
+{
+  "editor.tabSize": 2,
+  "files.autoSave": "onFocusChange",
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "src/.*\\.java$",
+        "cmd": "javac -d bin src/*.java"
+      }
+    ]
+  },
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.project.outputPath": "bin", // 🔒 Ensures .class files go to bin
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "C:\\Program Files\\Java\\jdk-17", // 🔁 Change if you use a different JDK path
+      "default": true
+    }
+  ],
+  "java.settings.gradle.enabled": false,
+  "java.configuration.updateBuildConfiguration": "disabled"
+}
