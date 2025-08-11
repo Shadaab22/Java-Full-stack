@@ -12,6 +12,7 @@ public class MonthChecker {
         if (input.isEmpty()) {
             System.out.println("Please enter the month in numbers");
         }
+        sc.close();
 
         int month;
         try {
@@ -36,6 +37,5 @@ public class MonthChecker {
             case 12: System.out.println("December"); break;
             default: System.out.println("Invalid month");
         }
-      sc.close();
     }
 }
