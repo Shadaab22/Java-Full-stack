@@ -1,3 +1,16 @@
+/*
+ * write a function that takes to 2 numbers in string for me and forms a string containing the sum of these two numbers. a string containing the sum of these two numbers
+ * Assumptions :
+ * The input strings will contain only numeric digits.
+ * The input strings can be of any large lengths.
+ * The lengths of the two input string need not be the same.
+ * The input strings will represent only positive numbers.
+ * For example -
+ * If input strings are "1234" and "56" the output strings should be "1290"
+ * If input strings are "123456732128989543219" send "987612673489652" the output string should be "123457719741663032871".
+ * Note :
+ * In Java find C# this logic can be easily implemented using BigInteger however for the sake of enhancing your programming skills you are recommended to solve this question without using BigInteger.
+ */
 package logicbuilding.milestone2;
 import java.util.*;
 
