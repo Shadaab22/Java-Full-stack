@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+  </head>
+  <body>
+    <h2>Temperature Converter</h2>
+    <input id="inputTemp" placeholder="Enter value" />
+    <select id="scale">
+      <option value="C">Celsius</option>
+      <option value="F">Fahrenheit</option>
+    </select>
+    <button onclick="convert()">Convert</button>
+    <div id="result"></div>
+
+    <script>
+      function convert() {
+        let val = parseFloat(document.getElementById("inputTemp").value);
+        let scale = document.getElementById("scale").value;
+        if (isNaN(val)) {
+          alert("Enter a number");
+          return;
+        }
+        let res = "";
+        if (scale === "C") {
+          res = `${val}°C = ${((val * 9) / 5 + 32).toFixed(2)}°F, ${(
+            val + 273.15
+          ).toFixed(2)}K`;
+        } else {
+          res = `${val}°F = ${(((val - 32) * 5) / 9).toFixed(2)}°C, ${(
+            ((val - 32) * 5) / 9 +
+            273.15
+          ).toFixed(2)}K`;
+        }
+        document.getElementById("result").innerText = res;
+      }
+    </script>
+  </body>
+</html>

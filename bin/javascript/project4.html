@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+  </head>
+  <body>
+    <h2>Image Slider</h2>
+    <img
+      id="slider"
+      src="https://picsum.photos/600/300?random=1"
+      width="600"
+      height="300"
+    />
+    <br />
+    <button onclick="prevImage()">Prev</button>
+    <button onclick="nextImage()">Next</button>
+
+    <script>
+      const images = [
+        "https://picsum.photos/600/300?random=1",
+        "https://picsum.photos/600/300?random=2",
+        "https://picsum.photos/600/300?random=3",
+        "https://picsum.photos/600/300?random=4",
+      ];
+      let idx = 0;
+
+      function showImage() {
+        document.getElementById("slider").src = images[idx];
+      }
+      function nextImage() {
+        idx = (idx + 1) % images.length;
+        showImage();
+      }
+      function prevImage() {
+        idx = (idx - 1 + images.length) % images.length;
+        showImage();
+      }
+      setInterval(nextImage, 3000);
+    </script>
+  </body>
+</html>

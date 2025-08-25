@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz app</title>
+  </head>
+  <body>
+    <h2>Quiz</h2>
+    <div id="quiz"></div>
+    <div id="score"></div>
+
+    <script>
+      const questions = [
+        { q: "2+2=?", options: ["3", "4", "5"], ans: "4" },
+        {
+          q: "Capital of India?",
+          options: ["Delhi", "Mumbai", "Chennai"],
+          ans: "Delhi",
+        },
+        {
+          q: "JS stands for?",
+          options: ["JavaStyle", "JavaScript", "JScript"],
+          ans: "JavaScript",
+        },
+      ];
+      let index = 0,
+        score = 0;
+
+      function loadQuestion() {
+        if (index >= questions.length) {
+          document.getElementById("quiz").innerHTML = "Quiz Over!";
+          document.getElementById(
+            "score"
+          ).innerText = `Score ${score}/${questions.length}`;
+          return;
+        }
+        let q = questions[index];
+        let html = `<h3>${q.q}</h3>`;
+        q.options.forEach((o) => {
+          html += `<button onclick="checkAns('${o}')">${o}</button><br>`;
+        });
+        document.getElementById("quiz").innerHTML = html;
+      }
+      function checkAns(opt) {
+        if (opt === questions[index].ans) score++;
+        index++;
+        loadQuestion();
+      }
+      loadQuestion();
+    </script>
+  </body>
+</html>

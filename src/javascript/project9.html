@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle</title>
+  </head>
+  <body>
+    <h2>Theme Toggle</h2>
+    <button onclick="toggleMode()">Toggle Theme</button>
+
+    <script>
+      function setTheme(mode) {
+        document.body.className = mode;
+        localStorage.setItem("theme", mode);
+      }
+      function toggleMode() {
+        let mode = document.body.className === "dark" ? "light" : "dark";
+        setTheme(mode);
+      }
+      window.onload = () => {
+        setTheme(localStorage.getItem("theme") || "light");
+      };
+    </script>
+    <style>
+      body.light {
+        background: white;
+        color: black;
+      }
+      body.dark {
+        background: #222;
+        color: white;
+      }
+      button {
+        margin: 5px;
+        padding: 5px 10px;
+      }
+    </style>
+  </body>
+</html>
